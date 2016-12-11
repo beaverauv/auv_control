@@ -8,7 +8,7 @@
 (function (window, document) {
     'use strict';
     var NC = function NodecopterCockpit(
-        dronestreamDiv, compassDiv, horizonCanvas, gaugeId
+        ROSLIB, dronestreamDiv, compassDiv, horizonCanvas, gaugeId
     ) {
         var qs           = document.querySelector.bind(document),
             //copterStream = new NodecopterStream(qs(dronestreamDiv)),
@@ -45,11 +45,10 @@
               messageType : 'geometry_msgs/Twist'
             });
 
-
-          // listener.subscribe(function(message) {
-          //         lastMessage=message;
-          //         requestAnimationFrame(navDataRenderer);
-          // });
+            listener.subscribe(function(message) {
+                    lastMessage=message;
+                    requestAnimationFrame(navDataRenderer);
+            });
 
 
         // navdataSocket.onmessage = function (msg) {

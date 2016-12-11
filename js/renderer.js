@@ -3,11 +3,10 @@
 // All of the Node.js APIs are available in this process.
 
 // require('eventemitter2');
-// var ROSLIB = require('./dist/scripts/roslib.js'); //prototype error
-// var ROSLIB = require('./roslib.min.js'); //prototype error
-// var ROSLIB = require('./node_modules/roslib/RosLib.js'); // cannot find module
-// var ROSLIB = require('roslib'); //cannot find module
-// var ROSLIB = require('./bower_components/roslib/build/roslib.js'); //prototype error
+// var ROSLIB = require('./roslib.js'); //Uncaught TypeError: Cannot read property 'prototype' of undefined @ 647
+var ROSLIB = require('../node_modules/roslib/src/RosLib.js');  //ROSLIB is not defined
+// var ROSLIB = require('roslib'); //ROSLIB is not defined
+// var ROSLIB = require('../bower_components/roslib/build/roslib.js'); //Uncaught TypeError: Cannot read property 'prototype' of undefined @ 1105
 require('./horizon.js');
 require('./compass.js');
 // require('./dist/scripts/gauge.js');
@@ -15,6 +14,7 @@ require('./cockpit.js');
 // require('tether');
 
 var cockpit = new NodecopterCockpit(
+  ROSLIB,
   '#stream',
   '#compass',
   '#horizon',
