@@ -1,14 +1,8 @@
 body {
-  min-height: 2000px;
   padding-top: 70px;
 }
-
-.cockpit {
-  text-align: center;
-}
-
-.subtitle {
-    color: gray;
+.panel-heading .btn-group {
+  float: right;
 }
 
 .horizon {
@@ -23,10 +17,11 @@ body {
 
 }
 
-.gauge.battery {
-    z-index: 4;
-    position: absolute;
-    right: 50px;
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #13a89e;
+    color: #0e1c2b;
+
 }
 
 .navbar-default {

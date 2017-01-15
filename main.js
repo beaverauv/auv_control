@@ -1,8 +1,52 @@
 const electron = require('electron')
+
+
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+
+
+//
+// var io = require('socket.io').listen(30500);
+// var spawn = require('child_process').spawn;
+//
+// io.on('connection', function (socket) {
+//   var shell = spawn('/bin/bash')
+//     , stdin = shell.stdin;
+//   // function getcwd(){
+//   //
+//   // }
+//   //
+//   // stdin.write("cd ~\n");
+//
+//   shell.on('exit', function() {
+//     socket.disconnect();
+//   })
+//
+//   shell['stdout'].setEncoding('ascii');
+//   shell['stdout'].on('data', function(data) {
+//     console.log(data);
+//     socket.emit('stdout', data);
+//   });
+//
+//   shell['stderr'].setEncoding('ascii');
+//   shell['stderr'].on('data', function(data) {
+//     socket.emit('stderr', data);
+//   });
+//
+//   socket.on('stdin', function(command) {
+//     stdin.write(command+"\n") || socket.emit('disable');
+//   });
+//
+//   stdin.on('drain', function() {
+//     socket.emit('enable');
+//   });
+//
+//   stdin.on('error', function(exception) {
+//     socket.emit('error', String(exception));
+//   });
+// });
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.

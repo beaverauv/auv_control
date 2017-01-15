@@ -8,7 +8,7 @@
 (function (window, document) {
     'use strict';
     var NC = function NodecopterCockpit(
-        ROSLIB, dronestreamDiv, compassDiv, horizonCanvas, gaugeId
+        ROSLIB, ros, dronestreamDiv, compassDiv, horizonCanvas, gaugeId
     ) {
         var qs           = document.querySelector.bind(document),
             //copterStream = new NodecopterStream(qs(dronestreamDiv)),
@@ -34,10 +34,6 @@
                 // gauge.draw();
                 compass.moveTo(lastMessage.angular.z);
             };
-
-            var ros = new ROSLIB.Ros({
-              'url' : 'ws://localhost:9090'
-            });
 
             var listener = new ROSLIB.Topic({
               ros : ros,
