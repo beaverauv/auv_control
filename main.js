@@ -1,10 +1,10 @@
-const electron = require('electron')
+const { app, BrowserWindow, globalShortcut } = require('electron');
 
 
-// Module to control application life.
-const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+// // Module to control application life.
+// const app = electron.app
+// // Module to create native browser window.
+// const BrowserWindow = electron.BrowserWindow
 
 
 //
@@ -71,6 +71,7 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
 }
 
 // This method will be called when Electron has finished

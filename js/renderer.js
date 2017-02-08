@@ -25,6 +25,7 @@ require('./horizon.js');
 require('./compass.js');
 // require('./dist/scripts/gauge.js');
 require('./cockpit.js');
+// require('./keypress-2.1.4.min.js');
 // require('tether');
 // var Terminal = require('terminal.js');
 var ros = new ROSLIB.Ros({
@@ -35,6 +36,7 @@ var tags = ["[DEBUG&#93;", "[ INFO&#93;"];
 var color = ["#3A6F02", "#88867C"];
 var terminalHistory;
 var currentLogLvl = 1;
+var listener = new window.keypress.Listener();
 
 var cockpit = new NodecopterCockpit(
   ROSLIB,
@@ -45,8 +47,84 @@ var cockpit = new NodecopterCockpit(
 );
 
 
-// $.terminal.active().echo(data);
+var my_scope = this;
+var my_combos = listener.register_many([
+    {
+        "keys"          : "w",
+        "is_exclusive"  : true,
+        "on_keydown"    : function() {
+          $("#btnUp").button('toggle');
+        },
+        "on_keyup"      : function(event) {
+          $("#btnUp").button('toggle');
+            return true
+        },
+        "this"          : my_scope
+    },
+    {
+        "keys"          : "a",
+        "is_exclusive"  : true,
+        "on_keydown"    : function() {
+          $("#btnLeft").button('toggle');
+        },
+        "on_keyup"      : function(event) {
+          $("#btnLeft").button('toggle');
+            return true
+        },
+        "this"          : my_scope
+    },
+    {
+        "keys"          : "s",
+        "is_exclusive"  : true,
+        "on_keydown"    : function() {
+          $("#btnDown").button('toggle');
+        },
+        "on_keyup"      : function(event) {
+          $("#btnDown").button('toggle');
+            return true
+        },
+        "this"          : my_scope
+    },
+    {
+        "keys"          : "d",
+        "is_exclusive"  : true,
+        "on_keydown"    : function() {
+          $("#btnRight").button('toggle');
+        },
+        "on_keyup"      : function(event) {
+          $("#btnRight").button('toggle');
+            return true
+        },
+        "this"          : my_scope
+    },
+    {
+        "keys"          : "q",
+        "is_exclusive"  : true,
+        "on_keydown"    : function() {
+          $("#btnTurnLeft").button('toggle');
+        },
+        "on_keyup"      : function(event) {
+          $("#btnTurnLeft").button('toggle');
+            return true
+        },
+        "this"          : my_scope
+    },
 
+    {
+        "keys"          : "e",
+        "is_exclusive"  : true,
+        "on_keydown"    : function() {
+          $("#btnTurnRight").button('toggle');
+        },
+        "on_keyup"      : function(event) {
+          $("#btnTurnRight").button('toggle');
+            return true
+        },
+        "this"          : my_scope
+    },
+
+
+]);
 
 var infoListener = new ROSLIB.Topic({
   ros : ros,

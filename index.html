@@ -17,6 +17,9 @@
   <script src="./bower_components/bootstrap/assets/javascripts/bootstrap.min.js"></script>
 
   <script src="./node_modules/jquery.terminal/js/jquery.terminal.js"></script>
+
+  <script src="./js/keypress-2.1.4.min.js"></script>
+
   <!-- <script src="./node_modules/terminal.js/index.js"></script> -->
   <!-- <script>
     window.$ = window.jQuery = require('./bower_components/jquery/jquery.min.js');
@@ -51,7 +54,7 @@
 
         <div class="panel panel-default pull-left">
           <div class="panel-heading">
-            Camera View
+            <h3 class="panel-title">Camera</h3>
           </div>
 
           <div class="panel-body">
@@ -67,7 +70,7 @@
   </div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
             <div class="btn-group">
@@ -80,12 +83,59 @@
                 <li><a href="#">Info</a></li>
               </ul>
             </div>
-            Terminal
+            <h3 class="panel-title">Terminal</h3>
 
             <div class="clearfix"></div>
           </div>
           <div class="panel-body">
             <div id="term_demo"></div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Control</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Heading</div>
+                  <div class="panel-body">
+                    <div class="btn-group btn-block">
+                      <button id="btnTurnLeft" style="font-size:1.5em;" class="btn btn-default col-lg-4 glyphicon glyphicon-share-alt" type="button"> </button>
+                      <button id="btnUp" style="font-size:1.5em;" class="btn btn-default col-lg-4 glyphicon glyphicon-arrow-up" type="button"></button>
+                      <button id="btnTurnRight" style="font-size:1.5em;" class="btn btn-default col-lg-4 glyphicon glyphicon-share-alt" type="button"></button>
+                    </div>
+                    <div class="btn-group btn-block">
+                      <button id="btnLeft" style="font-size:1.5em;" class="btn btn-default col-lg-4 glyphicon glyphicon-arrow-left" type="button"></button>
+                      <button id="btnDown" style="font-size:1.5em;" class="btn btn-default col-lg-4 glyphicon glyphicon-arrow-down" type="button"></button>
+                      <button id="btnRight" style="font-size:1.5em;" class="btn btn-default col-lg-4 glyphicon glyphicon-arrow-right" type="button"></button>
+                    </div>
+                    <div class="btn-group btn-block">
+                      <button class="btn btn-default col-lg-4" type="button">Left 1</button>
+                      <button class="btn btn-default col-lg-4" type="button">Left 2</button>
+                      <button class="btn btn-default col-lg-4" type="button">Left 3</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Heading</div>
+                  <div class="panel-body"></div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Heading</div>
+                  <div class="panel-body"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
